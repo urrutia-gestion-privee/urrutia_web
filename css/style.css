@@ -6827,3 +6827,14 @@ html, body {
 .mentions {
     font-size: .8rem;
 }
+
+.tab {
+    display: none;
+}
+
+.modal_form {
+    text-align: center;
+}
+.modal_form p {
+    margin-top: 20px;
+}

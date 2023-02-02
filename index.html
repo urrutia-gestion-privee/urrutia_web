@@ -13,7 +13,7 @@
     <=================================================================-->
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1"">
     <title>Urrutia Gestion Privée</title>
     <meta name="description" content="Passez votre patrimoine au niveau supérieur, avec Urrutia, cabinet de gestion privée indépendant.">
     
@@ -21,7 +21,7 @@
     <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
 
-    <link rel="stylesheet" href="css/bootstrap.min2.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -441,7 +441,7 @@
                 <div class="pricing-item wow fadeInUp active animated" data-wow-delay="300ms" data-sale="30">
                     <h3 class="font-light darkcolor">Audit</h3>
                     <p class="bottom30">Je souhaite faire une évaluation de ma situation patrimoniale.</p>
-                    <a class="button" href="javascript:void(0)">Nous contacter</a>
+                    <a class="button" id="openModalButton" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal">Nous contacter</a>
                 </div>
             </div>
             <div class="col-12 col-md-4">
@@ -461,111 +461,85 @@
         </div>
     </div>
 </section>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ma situation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body modal_form">
+            <div class="tab">Dîtes-nous en plus sur vous
+                <p><input name="nom" class="form-control" placeholder="Nom"></p>
+                <p><input name="prenom" class="form-control" placeholder="Prénom"></p>
+            </div>
+            
+            <div class="tab">Situation familiale
+                <p>
+                    <select name="situation_famille" class="form-control">
+                        <option value="célibataire">Célibataire</option>
+                        <option value="couple">En couple</option>
+                        <option value="marié">Marié</option>
+                        <option value="divorcé">Divorcé</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </p>
+            </div>
+            <div class="tab">Situation profesionnelle
+                <p>
+                    <select name="situation_pro" class="form-control">
+                        <option value="salarié">Salarié</option>
+                        <option value="indépendant">Indépendant</option>
+                        <option value="chef d'entreprise">Chef d'entreprise</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </p>
+            </div>
+            <div class="tab">Valorisation de votre patrimoine financier
+                <p>
+                    <select name="patrimoine_financier" class="form-control">
+                        <option value="100k">Inférieur à 100k€</option>
+                        <option value="100k-500k">Entre 100k€ et 500k€</option>
+                        <option value="500k-1M">Entre 500k€ et 1.5M€</option>
+                        <option value="1.5M">Supérieur à 1.5M€</option>
+                    </select>
+                </p>
+            </div>
+            <div class="tab">Valorisation de votre patrimoine immobilier
+                <p>
+                    <select name="patrimoine_immo" class="form-control">
+                        <option value="500k">Inférieur à 500k€</option>
+                        <option value="500k-1M">Entre 500k€ et 1.5M€</option>
+                        <option value="1.5M-5M">Entre 1.5M€ et 5M€</option>
+                        <option value="5M">Supérieur 5M€</option>
+                    </select>
+                </p>
+            </div>
+            <div class="tab">Estimation de vos revenus annuels
+                <p><input name="revenus_annuels" class="form-control" placeholder="200 000€"></p>
+            </div>
+            <div class="tab">Avez-vous des objectifs particuliers pour votre patrimoine ?
+                <p><textarea name="objectifs" class="form-control" placeholder="Objectifs"></textarea></p>
+            </div>
+            <div class="tab">Comment pouvons-nous vous contacter ?
+                <p><input name="email" class="form-control" placeholder="email"></p>
+                <p><input name="telephone" class="form-control" placeholder="Téléphone"></p>
+            </div>
+            <div class="tab">
+                Merci pour ces informations, vous pouvez valider pour envoyer votre demande.
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+          <button type="button" class="btn btn-secondary" id="prevBtn">Précédent</button>
+          <button type="button" id="nextBtn" class="btn btn-primary ">Suivant</button>
+        </div>
+      </div>
+    </div>
+  </div>
 <!--Pricing ends-->
 
-<!-- Testimonials -->
-<!-- <section id="our-testimonial">
-    <div class="parallax page-header testimonial-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-6 col-md-12 text-center text-lg-end">
-                    <div class="heading-title wow fadeInRight padding_testi" data-wow-delay="300ms">
-                        <span class="whitecolor">Découvrez ce que disent</span>
-                        <h2 class="whitecolor font-normal">Nos clients</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="owl-carousel" id="testimonial-slider">
-            <div class="item testi-box">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 col-md-12 text-center">
-                        <div class="testimonial-round d-inline-block">
-                            <img src="images/testimonial-5.jpg" alt="">
-                        </div>
-                        <h4 class="defaultcolor font-light top15"><a href="#.">John Smith</a></h4>
-                        <p>UPWORK, New York</p>
-                    </div>
-                    <div class="col-lg-6 offset-lg-2 col-md-10 offset-md-1 text-lg-start text-center">
-                        <p class="bottom15 top90">We have a number of different teams within our agency that specialise in different areas of business so you can be sure that you won't receive a generic service and although we boast a years and years of service.</p>
-                        <span class="d-inline-block test-star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="item testi-box">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 col-md-12 text-center">
-                        <div class="testimonial-round d-inline-block">
-                            <img src="images/testimonial-2.jpg" alt="">
-                        </div>
-                        <h4 class="defaultcolor font-light top15"><a href="#.">Hayden Wood</a></h4>
-                        <p>FIVERR, Italy</p>
-                    </div>
-                    <div class="col-lg-6 offset-lg-2 col-md-10 offset-md-1 text-lg-start text-center">
-                        <p class="bottom15 top90">Trax's customer testimonial page is another beauty. Its simple design focuses on videos and standout quotes from customers. This approach is clean, straightforward, text that can be overwhelming and easy to skip.</p>
-                        <span class="d-inline-block test-star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="item testi-box">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 col-md-12 text-center">
-                        <div class="testimonial-round d-inline-block">
-                            <img src="images/testimonial-3.jpg" alt="">
-                        </div>
-                        <h4 class="defaultcolor font-light top15"><a href="#.">Kevin Miller</a></h4>
-                        <p>ENVATO, Australia</p>
-                    </div>
-                    <div class="col-lg-6 offset-lg-2 col-md-10 offset-md-1 text-lg-start text-center">
-                        <p class="bottom15 top90">Trax is a company that provides tools to help professional event planning and execution, and their customers are very happy folks! The thing I love about their customer testimonial page provides content formats.</p>
-                        <span class="d-inline-block test-star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="item testi-box">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 col-md-12 text-center">
-                        <div class="testimonial-round d-inline-block">
-                            <img src="images/testimonial-4.jpg" alt="">
-                        </div>
-                        <h4 class="defaultcolor font-light top15"><a href="#.">Alina Johanson</a></h4>
-                        <p>INTEL, Sidney</p>
-                    </div>
-                    <div class="col-lg-6 offset-lg-2 col-md-10 offset-md-1 text-lg-start text-center">
-                        <p class="bottom15 top90">Startup Institute is a career accelerator that allows professionals to learn new skills, take their careers in a different direction, and pursue a career they are passionate about that have completed the program.</p>
-                        <span class="d-inline-block test-star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
 <!--Testimonials Ends-->
 <!-- Partners-->
 <section id="our-partners" class="padding">
@@ -674,7 +648,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
-                    <div class="heading-title  wow fadeInLeft" data-wow-delay="300ms">
+                    <div class="heading-title wow fadeInLeft" data-wow-delay="300ms">
                         <form class="getin_form" onsubmit="return false;">
                             <div class="row px-2">
                                 <div class="col-md-12 col-sm-12" id="result1"></div>
