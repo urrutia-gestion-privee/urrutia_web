@@ -1994,7 +1994,7 @@ jQuery($=> {
             })
 
             //Ajax post data to server
-            $.post('https://formsubmit.co/ajax/contact@urrutia.fr', postData, function (response) {
+            $.post('https://formsubmit.co/ajax/65d786a850863074b8946df3c4a18ada', postData, function (response) {
                 //load json data from server and output message
                 let output;
                 if (response.type === 'error') {
