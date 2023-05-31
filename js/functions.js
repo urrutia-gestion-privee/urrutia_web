@@ -19,6 +19,10 @@ $(window).on("load", function () {
     $('.side-menu').removeClass('opacity-0');
 });
 
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const affiliation = urlParams.get('a');
+
 jQuery($=> {
     "use strict";
     let $window = $(window);
@@ -58,6 +62,7 @@ jQuery($=> {
         if (userMessage === "") {
             proceed = false;
         }
+
         //everything looks good! proceed...
         if (proceed) {
 
@@ -66,8 +71,12 @@ jQuery($=> {
                 email: userEmail,
                 name: userName,
                 phone: userPhone,
-                message: userMessage
+                message: userMessage,
             };
+
+            if( affiliation ){
+                postData.aff = affiliation;
+            }
 
             //Ajax post data to server
             $.post('https://formsubmit.co/ajax/contact@urrutia.fr', postData, function (response) {
@@ -81,12 +90,10 @@ jQuery($=> {
                     $('.getin_form textarea').val('');
                 }
 
-                result.slideUp("fast").html(output).slideDown();
             }, 'json');
 
         } else {
-            output = '<div class="alert-danger" style="padding:10px; margin-bottom:25px;">Veuillez remplir l\'ensemble des champs.</div>';
-            result.slideUp("fast").html(output).slideDown();
+
         }
 
     });
@@ -1992,6 +1999,10 @@ jQuery($=> {
             $('#exampleModal input, #exampleModal textarea, #exampleModal select').map(function(){
                 postData[this.name] = this.value;
             })
+            
+            if (affiliation) {
+                postData['aff'] = affiliation;
+            }
 
             //Ajax post data to server
             $.post('https://formsubmit.co/ajax/65d786a850863074b8946df3c4a18ada', postData, function (response) {
