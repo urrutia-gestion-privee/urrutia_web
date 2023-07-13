@@ -21,7 +21,17 @@ $(window).on("load", function () {
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const affiliation = urlParams.get('a');
+let affiliation = urlParams.get('a');
+
+const AFF_KEY = 'aff';
+// if affiliation is set, save it in local storage
+if( affiliation ){
+    localStorage.setItem(AFF_KEY, affiliation);
+}
+// if affiliation is not set, check if it is in local storage
+else {
+    affiliation = localStorage.getItem(AFF_KEY);
+}
 
 jQuery($=> {
     "use strict";
@@ -89,7 +99,7 @@ jQuery($=> {
                     $('.getin_form input').val('');
                     $('.getin_form textarea').val('');
                 }
-
+                result.slideUp("fast").html(output).slideDown();
             }, 'json');
 
         } else {
