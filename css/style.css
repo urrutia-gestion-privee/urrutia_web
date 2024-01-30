@@ -4625,6 +4625,12 @@ h4.darkcolor {
     overflow: hidden;
 }
 
+#partners-slider .logo-item.square {
+    width: 160px;
+    height: 70px;
+    overflow: hidden;
+}
+
 #local-slider .logo-item {
     width: 100px;
     height: 80px;
